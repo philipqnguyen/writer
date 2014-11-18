@@ -10,12 +10,12 @@ class BookAPI < ActionDispatch::IntegrationTest
       response.status.must_equal 200
       response.content_type.must_equal Mime::JSON
       answer.size.must_equal Book.count
-      answer[0][:title].must_equal 'Wombat Returns'
-      answer[0][:author].must_equal 'Joe Evermore'
-      answer[0][:summary].must_equal 'Wombat returns to Goatham City'
-      answer[1][:title].must_equal 'Sun Rise'
-      answer[1][:author].must_equal 'Susie Q'
-      answer[1][:summary].must_equal 'The story of a sun rising'
+      answer[0][:title].must_equal 'Sun Rise'
+      answer[0][:author].must_equal 'Susie Q'
+      answer[0][:summary].must_equal 'The story of a sun rising'
+      answer[1][:title].must_equal 'Wombat Returns'
+      answer[1][:author].must_equal 'Joe Evermore'
+      answer[1][:summary].must_equal 'Wombat returns to Goatham City'
     end
   end
 end

@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141117000841) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "books", force: true do |t|
     t.string "title"
     t.string "author"
@@ -25,6 +28,6 @@ ActiveRecord::Schema.define(version: 20141117000841) do
     t.integer "book_id"
   end
 
-  add_index "chapters", ["book_id"], name: "index_chapters_on_book_id"
+  add_index "chapters", ["book_id"], name: "index_chapters_on_book_id", using: :btree
 
 end
