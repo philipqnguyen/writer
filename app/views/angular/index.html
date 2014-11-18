@@ -1,1 +1,9 @@
 <header class="navigation" nav-bar></header>
+
+<section data-ng-controller="BooksCtrl as ctrl" data-ng-init="ctrl.index()">
+  <article data-ng-repeat="book in ctrl.books">
+    <h1>{{book.title}}</h1>
+    <h4>by {{book.author}}</h4>
+    <p>{{book.summary}}</p>
+  </article>
+</section>
