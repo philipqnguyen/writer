@@ -21,7 +21,7 @@
     self.create = function (book) {
       $http.post('/books', {book: book})
         .success(function (data) {
-          self.books.push(data.book);
+          self.books.unshift(data.book);
           $location.path('/');
           console.log(self.books);
         })
