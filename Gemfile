@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
+
 gem 'active_model_serializers', '~> 0.8.0'
 gem 'bitters'
 gem 'bourbon', '~> 4.0.2'
