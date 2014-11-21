@@ -15,6 +15,15 @@
       })
       .when('/books/new', {
         templateUrl: 'angular/books/new.html'
+      })
+      .when('/user_sessions/new', {
+        templateUrl: 'angular/user_sessions/new.html'
+      })
+      .when('/user_registration/new', {
+        templateUrl: 'angular/user_registration/new.html'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
   }]);
 }());

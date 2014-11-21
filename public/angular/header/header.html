@@ -7,7 +7,9 @@
     <ul id="navigation-menu">
       <li class="nav-link"><a href="#/books/new">Create</a></li>
       <li class="nav-link"><a href="javascript:void(0)">About Us</a></li>
-      <li class="nav-link"><a href="javascript:void(0)">Contact</a></li>
+      <li class="nav-link"><a href="#/user_registration/new">Sign up</a></li>
+      <li class="nav-link" data-ng-show="!user.id"><a href="#/user_sessions/new">Sign in</a></li>
+      <li class="nav-link" data-ng-show="user.id"><a href data-ng-click="signOut()">Sign out</a></li>
       <li class="nav-link more"><a href="javascript:void(0)">More</a>
         <ul class="submenu">
           <li><a href="javascript:void(0)">Submenu Item</a></li>
