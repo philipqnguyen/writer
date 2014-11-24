@@ -14,7 +14,10 @@
         templateUrl: 'angular/books/books.html'
       })
       .when('/books/new', {
-        templateUrl: 'angular/books/new.html'
+        templateUrl: 'angular/books/new.html',
+        resolve: {
+          permission: authenticateUser
+        }
       })
       .when('/user_sessions/new', {
         templateUrl: 'angular/user_sessions/new.html'
@@ -26,4 +29,14 @@
         redirectTo: '/'
       });
   }]);
+
+  var authenticateUser = function ($q, $rootScope, $location) {
+    if ($rootScope.user.id) {
+      return true;
+    } else {
+      var deferred = $q.defer();
+      $location.path('/user_sessions/new');
+      return deferred.promise;
+    }
+  };
 }());
