@@ -1,0 +1,11 @@
+<section data-ng-controller="BooksCtrl as ctrl" data-ng-init="ctrl.show()">
+  <h1>{{ctrl.book.title}}</h1>
+  <h3>By {{ctrl.book.author}}</h3>
+  <h4>Summary</h4>
+  <p>{{ctrl.book.summary}}</p>
+
+  <h4>Chapters</h4>
+  <ul data-ng-repeat="chapter in ctrl.book.chapters">
+    <li>{{chapter.name}}</li>
+  </ul>
+</section>

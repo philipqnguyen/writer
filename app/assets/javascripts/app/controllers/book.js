@@ -1,7 +1,7 @@
 (function () {
   var app = angular.module('Writer');
 
-  app.controller('BooksCtrl', ['$http', '$location', function ($http, $location) {
+  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', function ($http, $location, $routeParams) {
     var self = this;
     self.books = [];
     self.errors = [];
@@ -30,5 +30,17 @@
           console.log(status);
         });
     }
+
+    self.show = function () {
+      $http.get('/books/' + $routeParams.bookId)
+        .success(function (data) {
+          self.book = data.book;
+        })
+        .error(function (data, status) {
+          self.errors.push(data);
+          console.log(status);
+        })
+    }
+
   }]);
 }());

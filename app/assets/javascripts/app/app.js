@@ -19,6 +19,9 @@
           permission: authenticateUser
         }
       })
+      .when('/books/:bookId', {
+        templateUrl: 'angular/books/show.html'
+      })
       .when('/user_sessions/new', {
         templateUrl: 'angular/user_sessions/new.html'
       })
