@@ -1,0 +1,8 @@
+the_rise:
+  name: The rise...
+  content: The sun rises from the east and sets on the west.
+  book: sun_rise
+the_set:
+  name: the set...
+  content: Omg it is setting
+  book: sun_rise
