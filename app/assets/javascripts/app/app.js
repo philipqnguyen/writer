@@ -2,7 +2,7 @@
 //= require_tree .
 
 (function () {
-  var app = angular.module('Writer', ['ngRoute']);
+  var app = angular.module('Writer', ['ngRoute', 'ng-token-auth']);
 
   app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token').attr('content');
@@ -14,7 +14,29 @@
         templateUrl: 'angular/books/books.html'
       })
       .when('/books/new', {
-        templateUrl: 'angular/books/new.html'
+        templateUrl: 'angular/books/new.html',
+        resolve: {
+          permission: authenticateUser
+        }
+      })
+      .when('/user_sessions/new', {
+        templateUrl: 'angular/user_sessions/new.html'
+      })
+      .when('/user_registration/new', {
+        templateUrl: 'angular/user_registration/new.html'
+      })
+      .otherwise({
+        redirectTo: '/'
       });
   }]);
+
+  var authenticateUser = function ($q, $rootScope, $location) {
+    if ($rootScope.user.id) {
+      return true;
+    } else {
+      var deferred = $q.defer();
+      $location.path('/user_sessions/new');
+      return deferred.promise;
+    }
+  };
 }());
