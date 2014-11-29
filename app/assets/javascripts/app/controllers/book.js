@@ -1,18 +1,18 @@
 (function () {
   var app = angular.module('Writer');
 
-  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', 'BooksService', function ($http, $location, $routeParams, BooksService) {
+  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', 'Books', function ($http, $location, $routeParams, Books) {
     var self = this;
     self.errors = [];
 
     self.books = function () {
-      return BooksService.get();
+      return Books.get();
     }
 
     self.index = function () {
       $http.get('/books')
         .success(function (data) {
-          BooksService.set(data.books);
+          Books.set(data.books);
         })
         .error(function (data, status) {
           self.errors.push(data);
@@ -24,7 +24,7 @@
     self.create = function (book) {
       $http.post('/books', {book: book})
         .success(function (data) {
-          BooksService.add(data.book);
+          Books.add(data.book);
           $location.path('/');
           console.log(self.books);
         })

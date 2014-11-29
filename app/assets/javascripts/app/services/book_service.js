@@ -1,7 +1,7 @@
 (function () {
   var app = angular.module('Writer');
 
-  app.service('BooksService', [function () {
+  app.service('Books', [function () {
     var books = [];
 
     this.get = function () {
