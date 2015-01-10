@@ -33,7 +33,7 @@
       });
   }]);
 
-  var authenticateUser = function ($q, $rootScope, $location) {
+  var authenticateUser = (['$q', '$rootScope', '$location', function ($q, $rootScope, $location) {
     if ($rootScope.user.id) {
       return true;
     } else {
@@ -41,5 +41,5 @@
       $location.path('/user_sessions/new');
       return deferred.promise;
     }
-  };
+  }]);
 }());
