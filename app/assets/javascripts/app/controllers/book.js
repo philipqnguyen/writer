@@ -1,7 +1,7 @@
 (function () {
   var app = angular.module('Writer');
 
-  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', 'Books', function ($http, $location, $routeParams, Books) {
+  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', 'Books', 'Chapters', function ($http, $location, $routeParams, Books, Chapters) {
     var self = this;
     self.errors = [];
 
@@ -38,6 +38,7 @@
       $http.get('/books/' + $routeParams.bookId)
         .success(function (data) {
           self.book = data.book;
+          Chapters.setCurrentBook($routeParams.bookId);
         })
         .error(function (data, status) {
           self.errors.push(data);

@@ -1,0 +1,8 @@
+<h1>Create a new chapter</h1>
+<form data-ng-controller="ChaptersCtrl as ctrl" name="newChapterForm">
+  <label>Name</label>
+  <input data-ng-model="ctrl.newChapter.name" required>
+  <label>Content</label>
+  <input data-ng-model="ctrl.newChapter.content" required>
+  <button data-ng-disabled="newChapterForm.$invalid" data-ng-click="ctrl.create(ctrl.newChapter)">Create</button>
+</form>

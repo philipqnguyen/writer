@@ -28,6 +28,9 @@
       .when('/user_registration/new', {
         templateUrl: 'angular/user_registration/new.html'
       })
+      .when('/chapters/new', {
+        templateUrl: 'angular/chapters/new.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
