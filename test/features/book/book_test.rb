@@ -56,4 +56,25 @@ class BookAPI < ActionDispatch::IntegrationTest
       response.status.must_equal 422
     end
   end
+
+  describe 'As an API consume, I want to update a book' do
+    it 'should update a book successfully' do
+      patch '/books/' + books(:sun_rise).id.to_s, {
+        summary: 'I am changed!'
+      }.to_json,
+      {
+        'Accept' => 'application/json',
+        'Content-Type' => 'application/json'
+      }
+
+      answer = JSON.parse(response.body, symbolize_names: true)[:book]
+
+      response.status.must_equal 200
+      response.content_type.must_equal Mime::JSON
+      response.location.must_equal book_path books(:sun_rise).id
+      answer[:title].must_equal books(:sun_rise).title
+      answer[:author].must_equal books(:sun_rise).author
+      answer[:summary].must_equal 'I am changed!'
+    end
+  end
 end

@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: :show
+  before_action :set_book, only: [:show, :update]
 
   def index
     books = Book.order(created_at: :desc).all
@@ -21,6 +21,14 @@ class BooksController < ApplicationController
       render json: book, status: 201, location: book_path(book)
     else
       render json: book.errors, status: 422
+    end
+  end
+
+  def update
+    if @book.update_attributes(book_params)
+      render json: @book, status: 200, location: book_path(@book)
+    else
+      render json: @book.errors, status: 422
     end
   end
 
