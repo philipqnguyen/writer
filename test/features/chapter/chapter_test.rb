@@ -36,4 +36,19 @@ class ChapterAPI < ActionDispatch::IntegrationTest
       books(:sun_rise).chapters.last.name.must_equal 'Chapter 1'
     end
   end
+
+  describe 'As an API consumer, show error if creating an invalid chapter' do
+    it 'should respond with a 422 status' do
+      post '/chapters/', {
+        name: 'so cool',
+        content: 'Very cool man',
+      }.to_json,
+      {
+        'Accept' => 'application/json',
+        'Content-Type' => 'application/json'
+      }
+
+      response.status.must_equal 422
+    end
+  end
 end
