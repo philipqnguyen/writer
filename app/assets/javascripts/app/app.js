@@ -31,6 +31,9 @@
       .when('/chapters/new', {
         templateUrl: 'angular/chapters/new.html'
       })
+      .when('/books/update/:bookId', {
+        templateUrl: 'angular/books/edit.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
