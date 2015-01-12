@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: [:show, :update]
+  before_action :set_book, only: [:show, :update, :destroy]
 
   def index
     books = Book.order(created_at: :desc).all
@@ -30,6 +30,11 @@ class BooksController < ApplicationController
     else
       render json: @book.errors, status: 422
     end
+  end
+
+  def destroy
+    @book.destroy
+    render json: {message: 'Success'}
   end
 
   private

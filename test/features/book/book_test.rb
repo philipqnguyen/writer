@@ -77,4 +77,18 @@ class BookAPI < ActionDispatch::IntegrationTest
       answer[:summary].must_equal 'I am changed!'
     end
   end
+
+  describe 'As an API consumer, I want to delete a book' do
+    it 'should delete a book successfully' do
+      delete "/books/#{books(:sun_rise).id}",
+      {
+        'Accept' => 'application/json',
+        'Content-Type' => 'application/json'
+      }
+
+      answer = JSON.parse(response.body, symbolize_names: true)
+
+      answer[:message].must_equal 'Success'
+    end
+  end
 end
