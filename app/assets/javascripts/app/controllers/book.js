@@ -66,5 +66,20 @@
         });
     };
 
+    self.delete = function () {
+      $http({
+        method: 'DELETE',
+        url: '/books/' + Book.getCurrentBookId()
+      })
+        .success(function (data) {
+          $location.path('/')
+        })
+        .error(function (data, status) {
+          self.errors.push(data);
+          console.log(data);
+          console.log(status);
+        });
+    };
+
   }]);
 }());

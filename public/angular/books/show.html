@@ -4,8 +4,9 @@
   <h4>Summary</h4>
   <p>{{ctrl.book.summary}}</p>
 
+  <a href="#/chapters/new">New Chapter</a> |
   <a href="#/books/update/{{ctrl.book.id}}">Update Book</a> |
-  <a href="#/chapters/new">New Chapter</a>
+  <a href="#" data-ng-click="ctrl.delete()">Delete Book</a>
 
   <h4>Chapters</h4>
   <ul data-ng-repeat="chapter in ctrl.book.chapters">
