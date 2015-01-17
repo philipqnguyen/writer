@@ -5,6 +5,6 @@
   <label>Author</label>
   <input data-ng-model="ctrl.newBook.author" required>
   <label>Summary</label>
-  <input data-ng-model="ctrl.newBook.summary" required>
+  <textarea rows="10" cols="10" data-ng-model="ctrl.newBook.summary" required></textarea>
   <button data-ng-disabled="newBookForm.$invalid" data-ng-click="ctrl.create(ctrl.newBook)">Create</button>
 </form>
