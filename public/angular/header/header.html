@@ -2,14 +2,14 @@
   <a href="#/" class="logo">
     <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_1.png" alt="Logo Image">
   </a>
-  <a href="" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
-  <div class="nav">
-    <ul id="navigation-menu">
+  <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">MENU</a>
+  <nav role="navigation">
+    <ul id="js-navigation-menu" class="navigation-menu show">
       <li class="nav-link"><a href="#/books/new">Create</a></li>
       <li class="nav-link" data-ng-show="!user.id"><a href="#/user_registration/new">Sign up</a></li>
       <li class="nav-link" data-ng-show="!user.id"><a href="#/user_sessions/new">Sign in</a></li>
       <li class="nav-link" data-ng-show="user.id"><a href data-ng-click="signOut()">Sign out</a></li>
-<!--       <li class="nav-link more"><a href="javascript:void(0)">More</a>
+      <!-- <li class="nav-link more"><a href="javascript:void(0)">More</a>
         <ul class="submenu">
           <li><a href="javascript:void(0)">Submenu Item</a></li>
           <li><a href="javascript:void(0)">Another Item</a></li>
@@ -28,15 +28,15 @@
         </ul>
       </li> -->
     </ul>
-  </div>
+  </nav>
   <div class="navigation-tools">
     <div class="search-bar">
-      <div class="search-and-submit">
+      <form role="search">
         <input type="search" placeholder="Enter Search" />
         <button type="submit">
           <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon.png" alt="Search Icon">
         </button>
-      </div>
+      </form>
     </div>
     <!-- <a href="javascript:void(0)" class="sign-up">Sign Up</a> -->
   </div>

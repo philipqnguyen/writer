@@ -16,5 +16,4 @@
 //= require angular-route
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth
-//= require header-nav
 //= require app/app
