@@ -1,0 +1,21 @@
+$mobile: new-breakpoint(max-width 500px 4);
+
+.book-tile {
+  @include span-columns(4);
+  @include omega(3n);
+  @include media($mobile) {
+    @include span-columns(12);
+    @include omega(1n);
+  }
+  // background-color: $tile;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.5rem;
+  border: 0.1em solid $tile;
+  &:hover {
+    background: $tile;
+  }
+  a {
+    color: $tile-text;
+  }
+}

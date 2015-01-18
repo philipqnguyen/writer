@@ -1,9 +1,9 @@
 <h1>Create a new book</h1>
-<form data-ng-controller="BooksCtrl as ctrl" name="newBookForm">
+<form class="content" data-ng-controller="BooksCtrl as ctrl" name="newBookForm">
   <label>Title</label>
-  <input data-ng-model="ctrl.newBook.title" required>
+  <input type="text" data-ng-model="ctrl.newBook.title" required>
   <label>Author</label>
-  <input data-ng-model="ctrl.newBook.author" required>
+  <input type="text" data-ng-model="ctrl.newBook.author" required>
   <label>Summary</label>
   <textarea rows="10" cols="10" data-ng-model="ctrl.newBook.summary" required></textarea>
   <button data-ng-disabled="newBookForm.$invalid" data-ng-click="ctrl.create(ctrl.newBook)">Create</button>

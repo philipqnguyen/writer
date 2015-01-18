@@ -1,10 +1,10 @@
 <h1>Edit</h1>
 <form data-ng-controller="BooksCtrl as ctrl" name="updateBookForm">
   <label>Title</label>
-  <input data-ng-model="ctrl.updateBook.title" data-ng-init="ctrl.updateBook.title=ctrl.currentBook().title" required>
+  <input type="text" data-ng-model="ctrl.updateBook.title" data-ng-init="ctrl.updateBook.title=ctrl.currentBook().title" required>
   <label>Author</label>
-  <input data-ng-model="ctrl.updateBook.author" data-ng-init="ctrl.updateBook.author=ctrl.currentBook().author" required>
+  <input type="text" data-ng-model="ctrl.updateBook.author" data-ng-init="ctrl.updateBook.author=ctrl.currentBook().author" required>
   <label>Summary</label>
-  <input data-ng-model="ctrl.updateBook.summary" data-ng-init="ctrl.updateBook.summary=ctrl.currentBook().summary" required>
-  <button data-ng-disabled="updateBookForm.$invalid" data-ng-click="ctrl.update(ctrl.updateBook)">Create</button>
+  <textarea rows="10" data-ng-model="ctrl.updateBook.summary" data-ng-init="ctrl.updateBook.summary=ctrl.currentBook().summary" required></textarea>
+  <button data-ng-disabled="updateBookForm.$invalid" data-ng-click="ctrl.update(ctrl.updateBook)">Update</button>
 </form>
