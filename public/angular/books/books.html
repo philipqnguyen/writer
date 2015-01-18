@@ -1,5 +1,5 @@
 <section data-ng-controller="BooksCtrl as ctrl" data-ng-init="ctrl.index()">
-  <article data-ng-repeat="book in ctrl.books()" class="book-tile">
+  <article data-ng-repeat="book in ctrl.books() | filter:ctrl.query()" class="book-tile">
     <a href="#/books/{{book.id}}">
       <h1>{{book.title}}</h1>
       <h4>by {{book.author}}</h4>

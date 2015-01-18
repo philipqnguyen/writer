@@ -1,9 +1,13 @@
 (function () {
   var app = angular.module('Writer');
 
-  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', 'Books', 'Book', function ($http, $location, $routeParams, Books, Book) {
+  app.controller('BooksCtrl', ['$http', '$location', '$routeParams', 'Books', 'Book', 'Search', function ($http, $location, $routeParams, Books, Book, Search) {
     var self = this;
     self.errors = [];
+
+    self.query = function () {
+      return Search.get();
+    };
 
     self.books = function () {
       return Books.get();
