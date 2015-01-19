@@ -16,5 +16,9 @@
   ],
   "dependencies": {
     "ng-token-auth": "~0.0.24"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest",
+    "jquery": "latest"
   }
 }
