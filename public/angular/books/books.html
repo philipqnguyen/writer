@@ -1,9 +1,9 @@
 <section data-ng-controller="BooksCtrl as ctrl" data-ng-init="ctrl.index()">
   <article data-ng-repeat="book in ctrl.books() | filter:ctrl.query()" class="book-tile">
     <a href="#/books/{{book.id}}">
-      <h1>{{book.title}}</h1>
-      <h4>by {{book.author}}</h4>
-      <p>{{book.summary}}</p>
+      <h1>{{book.title | limitTo: 15}}</h1>
+      <h4>by {{book.author | limitTo: 20}}</h4>
+      <p>{{book.summary | limitTo: 40}}</p>
     </a>
   </article>
 </section>
