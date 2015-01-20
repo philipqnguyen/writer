@@ -34,7 +34,6 @@
         .success(function (data) {
           Books.add(data.book);
           $location.path('/');
-          console.log(self.books);
         })
         .error(function (data, status) {
           self.errors.push(data);

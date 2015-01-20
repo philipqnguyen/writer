@@ -10,7 +10,6 @@
 
       $http.post('/chapters', {chapter: chapter})
         .success(function (data) {
-          console.log(data.chapter);
           $location.path(/books/ + Book.getCurrentBookId())
         })
         .error(function (data, status) {

@@ -12,6 +12,7 @@ gem 'neat', '~> 1.7.1'
 gem 'omniauth', '~> 1.2.2'
 gem 'rails', '4.1.7'
 gem 'pg'
+gem 'protractor-rails'
 gem 'uglifier', '>= 1.3.0'
 
 group :test do

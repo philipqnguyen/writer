@@ -15,6 +15,8 @@ module.exports = function(config) {
       './vendor/assets/bower_components/ng-token-auth/dist/ng-token-auth.js',
       './vendor/assets/bower_components/angular-mocks/angular-mocks.js',
       './app/assets/javascripts/app/app.js',
+      './app/assets/javascripts/app/controllers/**.js',
+      './app/assets/javascripts/app/services/**.js',
       './app/assets/javascripts/app/spec/unit/**_spec.js'
     ],
 
